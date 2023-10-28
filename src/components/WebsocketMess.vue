@@ -6,7 +6,12 @@
     </div>
     <div class="mess-right">
       <h1>This website does nothing but count how many times the cat being clicked (across the internet).</h1>
-      <h2>{{model}}</h2>
+      <template v-if="model === 0">
+        <h4>loading from server...</h4>
+      </template>
+      <template v-else>
+        <h2>{{model}}</h2>
+      </template>
     </div>
   </div>
 </template>
@@ -48,7 +53,7 @@ export default {
   name: "WebsocketMess",
   data(){
     return {
-      model: `loading from server...`,
+      model: 0,
       ws: {},
       clickStatus: false
     }
@@ -71,6 +76,14 @@ export default {
     },
     wsSend(){
       this.ws.send('clicked');
+    },
+    keepAlive(){
+      setInterval(
+        ()=>{
+          this.ws.send('keep');
+        },
+        1000
+      )
     }
   },
   computed: {
@@ -82,6 +95,7 @@ export default {
   },
   mounted(){
     this.setBridge();
+    this.keepAlive();
   }
 }
 </script>
