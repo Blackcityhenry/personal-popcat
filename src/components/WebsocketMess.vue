@@ -2,6 +2,7 @@
   <div class="mess">
     <div class="mess-left">
       <img :src="popcatSrc" @mousedown="catClickHandler" @mouseup="resetImg" />
+      <img hidden src="../assets/img/popcat--open.png">
     </div>
     <div class="mess-right">
       <h1>This website does nothing but count how many times the cat being clicked (across the internet).</h1>
