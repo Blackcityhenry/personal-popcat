@@ -5,7 +5,7 @@
       <img hidden src="../assets/img/popcat--open.png">
     </div>
     <div class="mess-right">
-      <h1>This website does nothing but count how many times the cat being clicked (across the internet).</h1>
+      <h1>This website does nothing but counts how many times the cat being clicked (across the internet).</h1>
       <template v-if="model === 0">
         <h4>loading from server...</h4>
       </template>
