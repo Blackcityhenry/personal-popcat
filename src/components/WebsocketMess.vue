@@ -77,14 +77,6 @@ export default {
     wsSend(){
       this.ws.send('clicked');
     },
-    keepAlive(){
-      setInterval(
-        ()=>{
-          this.ws.send('keep');
-        },
-        1000
-      )
-    }
   },
   computed: {
     popcatSrc(){
@@ -95,7 +87,6 @@ export default {
   },
   mounted(){
     this.setBridge();
-    // this.keepAlive();
   }
 }
 </script>
