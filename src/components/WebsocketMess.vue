@@ -23,6 +23,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  @media only screen and (max-width: 768px){
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
   &-left {
     height: 100vh;
 
@@ -31,6 +36,10 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+
+    @media only screen and (max-width: 768px){
+      height: 50vh;
     }
   }
 
@@ -42,7 +51,21 @@
     flex-direction: column;
 
     h2 {
-      font-size: 20em;
+      font-size: 300px;
+    }
+
+    @media only screen and (max-width: 768px){
+      height: 50vh;
+      padding: 20px;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 60px;
+        text-align: center;
+      }
     }
   }
 }
